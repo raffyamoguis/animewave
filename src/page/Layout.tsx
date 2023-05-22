@@ -1,11 +1,6 @@
 import { useState } from 'react';
-import {
-  AppShell,
-  Text,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
-} from '@mantine/core';
+import { AppShell, MediaQuery, Burger, useMantineTheme } from '@mantine/core';
+import { Outlet } from 'react-router-dom';
 import Barnav from '../components/Barnav';
 import Head from '../components/Head';
 import Headcontent from '../components/Headcontent';
@@ -43,7 +38,7 @@ export default function AppShellDemo() {
         </Head>
       }
     >
-      <Text>Resize app to see responsive navbar in action</Text>
+      <Outlet />
     </AppShell>
   );
 }

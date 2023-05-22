@@ -1,5 +1,9 @@
-import { MantineProvider, Text } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './page/Layout';
+import Home from './page/Home';
+import Engine from './page/Engine';
+import Settings from './page/Settings';
 
 export default function App() {
   return (
@@ -11,7 +15,15 @@ export default function App() {
         headings: { fontFamily: 'Roboto, sans-serif' },
       }}
     >
-      <Layout />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='engine' element={<Engine />} />
+            <Route path='settings' element={<Settings />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </MantineProvider>
   );
 }
