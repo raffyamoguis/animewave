@@ -7,10 +7,11 @@ const useRouteLocation = () => {
 
   function capitalizeFirstLetter(str: string) {
     return str.charAt(0).toUpperCase() + str.slice(1);
-  }
+  } // Capitalize first letter.
 
   useEffect(() => {
     function identifyRoute() {
+      // Set the route name base on the current route.
       if (location.pathname === '/') {
         setCurrentRoute('Home');
         return;
